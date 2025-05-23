@@ -1,0 +1,827 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Pertemuan 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ac54857-ba46-80bb-87f0-c2947f859388" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/snippet_blue.svg"/></div><h1 class="page-title">Pertemuan 3</h1><p class="page-description"></p></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Perkenalan Tailwind CSS </summary><div class="indented"><figure id="1a454857-ba46-8011-a08f-d51f2830405b" class="image"><a href="image.png"><img style="width:681.9866333007812px" src="image.png"/></a><figcaption><a href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></figcaption></figure><p id="1a454857-ba46-801f-a09a-dd07b74d60b1" class="">Tailwind CSS merupakan framework <em>utility-first</em> yang memungkinkan kita membangun UI  dengan cepat menggunakan kelas CSS yang sudah disediakan, tanpa perlu membuat class CSS manual.</p><div id="1a454857-ba46-8067-8f04-f1ffe57c8383" class="column-list"><div id="1a454857-ba46-80e5-952f-eb7fad778a53" style="width:50%" class="column"><p id="1a454857-ba46-807c-8a4f-f9f40852d43e" class="block-color-gray_background">CSS Manual</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a454857-ba46-80e2-b84e-df64f8f05aee" class="code"><code class="language-CSS">.div {
+	background-color:red;
+	padding-right:5px;
+}</code></pre></div><div id="1a454857-ba46-8092-8068-fe56f24dc82d" style="width:50%" class="column"><p id="1a454857-ba46-8008-996e-cf8abd6fbf74" class="block-color-blue_background">Tailwind CSS</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a454857-ba46-8037-95fa-d6e82d7f491a" class="code"><code class="language-CSS">&lt;div class=&quot;bg-red-50 pr-4&quot;&gt;</code></pre><p id="1a454857-ba46-8045-b2f5-c602d3ff2e12" class="">
+</p></div></div><p id="1a454857-ba46-8056-a169-c0321e5b53df" class="">Class yang sudah disediakan oleh tailwindcss sudah sangat lengkap sehingga kita bisa membuat styling yang sederhana maupun styling mengikuti desain yang kita miliki.</p><hr id="1a454857-ba46-803b-aa81-e56c683cd25d"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Install Tailwind CSS 4</summary><div class="indented"><p id="1a454857-ba46-8026-83da-d67777b869c7" class="">Untuk menginstall tailwind css, silahkan ikuti langkah-langkah berikut</p><ul id="1a454857-ba46-800a-9cde-ecd0157dca66" class="bulleted-list"><li style="list-style-type:disc">install package yang dibutuhkan:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a454857-ba46-8065-816b-cd86f7898051" class="code"><code class="language-Bash">npm install tailwindcss @tailwindcss/vite</code></pre><p id="1b654857-ba46-8018-9641-e834be4b0216" class="">
+</p></li></ul><ul id="1a454857-ba46-809c-ad7b-fb1f1e3903cf" class="bulleted-list"><li style="list-style-type:disc">buka file <code>vite.config.js</code> yang ada di direktori utama lalu tambahkan<mark class="highlight-blue_background"> baris yang di-highlight</mark> berikut:<div id="1b754857-ba46-8055-a329-cbff19740a07" class="column-list"><div id="1b754857-ba46-80e1-98ab-dfbc64ee6363" style="width:37.5%" class="column"><figure id="1b754857-ba46-8008-8599-f7b460013584" class="image"><a href="image%201.png"><img style="width:289.9999694824219px" src="image%201.png"/></a></figure><p id="1b754857-ba46-806f-8eeb-fcf38e61d911" class="">
+</p></div><div id="1b754857-ba46-805a-8a72-c47a8ada0975" style="width:62.5%" class="column"><figure id="1a454857-ba46-80aa-abef-e10b5395ff29" class="image" style="text-align:center"><a href="image%202.png"><img style="width:384px" src="image%202.png"/></a></figure></div></div></li></ul><p id="1b754857-ba46-8094-9fff-f969fc50a30a" class="">
+</p><ul id="1b654857-ba46-80c0-9252-e6a1f31ad960" class="bulleted-list"><li style="list-style-type:disc">Buatlah folder <code>pertemuan-3</code> lalu buat didalamnya beberapa file berikut:<div id="1b754857-ba46-80f3-8fe3-cc94a7a8f702" class="column-list"><div id="1b754857-ba46-8094-8f83-cebe2b3989eb" style="width:43.75%" class="column"><p id="1b754857-ba46-80a4-b526-d61792c64bbc" class=""><code>main.jsx</code></p><figure id="1b754857-ba46-8051-a399-ee6c41760b87" class="image"><a href="image%203.png"><img style="width:288px" src="image%203.png"/></a></figure><p id="1b754857-ba46-809e-8214-fbd76d566da7" class="">
+</p></div><div id="1b754857-ba46-80ca-941f-c353ba9ff1f7" style="width:56.25%" class="column"><p id="1b754857-ba46-8084-bccc-df27525d3ccc" class=""><code>tailwind.css</code></p><figure id="1b854857-ba46-80ce-beb6-fe9a3766b070" class="image"><a href="image%204.png"><img style="width:288px" src="image%204.png"/></a><figcaption>Isi file custom.css hanya 1 baris ini saja…</figcaption></figure><p id="1b754857-ba46-806c-885b-cbe6a3929051" class=""><code>TailwindCSS.jsx</code></p><figure id="1b754857-ba46-8097-ba04-c4708e846966" class="image"><a href="image%205.png"><img style="width:326.2499694824219px" src="image%205.png"/></a></figure></div></div></li></ul><ul id="1b754857-ba46-809a-bc7d-eb30dc6f2f82" class="bulleted-list"><li style="list-style-type:disc">Hasil penerapan class tailwind pada sebuah Button beserta penjelasannya<div id="1b754857-ba46-8000-89df-dbb11f9ca4c7" class="column-list"><div id="1b754857-ba46-8026-b06f-f2a78c206c40" style="width:31.25%" class="column"><figure id="1b754857-ba46-80e3-b04f-de1e5b44d680" class="image"><a href="image%206.png"><img style="width:842px" src="image%206.png"/></a></figure></div><div id="1b754857-ba46-80a4-9f71-f25f5de62d02" style="width:68.75%" class="column"><table id="1b754857-ba46-80de-a7b4-d1276c6c410c" class="simple-table"><tbody><tr id="1b754857-ba46-80d0-a521-da4c7438e121"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>border</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Memberikan garis tepi (border) default.</td></tr><tr id="1b754857-ba46-8010-90bc-e9b680b1b285"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>m-4</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Memberikan margin sebesar 1rem (4 * 0.25rem).</td></tr><tr id="1b754857-ba46-80ac-b1d2-cd1055d715f1"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>bg-blue-500</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Mengatur <strong>background color</strong> menjadi biru dengan tingkat kecerahan <strong>500</strong> (standar dari skala warna Tailwind).</td></tr><tr id="1b754857-ba46-8068-a242-d4b58b8200df"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>text-white</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Mengubah warna teks menjadi <strong>putih</strong>.</td></tr><tr id="1b754857-ba46-8054-a5cf-f872b29035e7"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>px-4</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Memberikan <strong>padding horizontal </strong><em><strong>(padding-left &amp; padding-right)</strong></em> sebesar <code>1rem</code> </td></tr><tr id="1b754857-ba46-80c3-9501-c208a7c035de"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>py-2</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Memberikan <strong>padding vertical </strong><em><strong>(padding-top &amp; padding-bottom)</strong></em> sebesar <code>0.5rem</code> </td></tr><tr id="1b754857-ba46-802b-9d63-e5450f362757"><th id="\r:U" class="simple-table-header-color simple-table-header" style="width:102.99999237060547px"><code>rounded</code></th><td id="ZLh}" class="" style="width:281.9944763183594px">Memberikan <strong>border-radius default</strong> untuk membuat tombol agak membulat.</td></tr></tbody></table></div></div></li></ul><p id="1b754857-ba46-80b9-adf7-cc939adf6077" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Extension Tailwind CSS</summary><div class="indented"><div id="1b754857-ba46-80a5-88b9-c2bb556f3587" class="column-list"><div id="1b754857-ba46-803d-a346-c603e15b2b25" style="width:43.75%" class="column"><figure id="1b754857-ba46-8076-b9de-f39c95d607c5" class="image"><a href="image%207.png"><img style="width:480px" src="image%207.png"/></a></figure><ul id="1b754857-ba46-80f0-aeab-db246f208d38" class="bulleted-list"><li style="list-style-type:disc"><strong>Auto-suggestion</strong> untuk class Tailwind</li></ul><ul id="1b754857-ba46-8043-afc8-c7a79b00306e" class="bulleted-list"><li style="list-style-type:disc"><strong>Hover preview</strong> untuk melihat warna, ukuran, dll.</li></ul><ul id="1b754857-ba46-8039-97ea-da4cb9fa19c8" class="bulleted-list"><li style="list-style-type:disc"><strong>Linting &amp; error checking</strong> untuk class yang salah</li></ul></div><div id="1b754857-ba46-80ae-8294-d3e890a73eb8" style="width:56.25%" class="column"><figure id="1b754857-ba46-80ed-be05-f57eb010bc29" class="image"><a href="image%208.png"><img style="width:303.98895263671875px" src="image%208.png"/></a></figure><p id="1b754857-ba46-8019-ad74-cdbbe0a752e6" class="">
+</p></div></div></div></details></div></details><hr id="1b754857-ba46-80c0-a64e-cc4a19f8cec1"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Kategori  Tailwind CSS </summary><div class="indented"><p id="1b754857-ba46-809c-bec1-dc6cdf19c366" class="">Tailwind CSS menawarkan fleksibilitas  dalam kustomisasi desain. Agar lebih mudah dipahami dan digunakan secara efektif, kita akan membaginya ke dalam beberapa kategori sebagai berikut:</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">1️⃣ <strong>Spacing (Margin &amp; Padding)</strong></summary><div class="indented"><p id="1b754857-ba46-80b6-a860-e06a7a6624fb" class=""><strong>🔹 </strong>Mengatur <strong>jarak luar (margin)</strong> dan <strong>jarak dalam (padding)</strong> elemen.</p><ul id="1b754857-ba46-80b7-86c5-fd0dae889dd7" class="bulleted-list"><li style="list-style-type:disc"><code>m-4</code> → Margin <code>1rem</code></li></ul><ul id="1b754857-ba46-802b-8291-d6b559290d3d" class="bulleted-list"><li style="list-style-type:disc"><code>p-2</code> → Padding <code>0.5re</code></li></ul><ul id="1b754857-ba46-80cc-b0e1-dd6796ef8f26" class="bulleted-list"><li style="list-style-type:disc"><code>mx-4</code> → Margin horizontal <code>1rem</code> (left &amp; right)</li></ul><ul id="1b754857-ba46-807c-9163-ccebe1c5dadc" class="bulleted-list"><li style="list-style-type:disc"><code>py-3</code> → Padding vertical <code>0.75rem</code> (top &amp; bottom)</li></ul><h3 id="1b754857-ba46-80dd-8d07-d0e7ccde8441" class=""><strong>Contoh: </strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-80f0-95a6-c0e3c437fe2d" class="code"><code class="language-JavaScript">function Spacing(){
+    return (
+        &lt;div className=&quot;bg-white shadow-lg p-6 m-4 rounded-lg&quot;&gt;
+            &lt;h2 className=&quot;text-lg font-semibold&quot;&gt;Card Title&lt;/h2&gt;
+            &lt;p className=&quot;mt-2 text-gray-600&quot;&gt;Ini adalah contoh penggunaan padding dan margin di Tailwind.&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}</code></pre><p id="1b754857-ba46-80eb-9af7-f697aa2970b6" class="">
+</p><hr id="1b754857-ba46-8059-93d5-dec440653b28"/></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">2️⃣ <strong>Typography (Teks &amp; Font)</strong></summary><div class="indented"><p id="1b754857-ba46-8056-8b55-c761fba99474" class=""><strong>🔹 </strong>Mengatur ukuran, ketebalan, warna, dan gaya teks.</p><ul id="1b754857-ba46-80e0-b1a2-df0ae38adde0" class="bulleted-list"><li style="list-style-type:disc"><code>text-lg</code> → Ukuran teks besar</li></ul><ul id="1b754857-ba46-80d6-aefb-d98e34ec6a87" class="bulleted-list"><li style="list-style-type:disc"><code>font-bold</code> → Teks tebal</li></ul><ul id="1b754857-ba46-8097-813e-c91b617eb9cd" class="bulleted-list"><li style="list-style-type:disc"><code>text-gray-500</code> → Warna abu-abu</li></ul><ul id="1b754857-ba46-80d2-ae8b-f9471fa5bd9c" class="bulleted-list"><li style="list-style-type:disc"><code>uppercase</code> → Huruf kapital semua</li></ul><h3 id="1b754857-ba46-802a-8ff1-e9f01e61e12c" class=""><strong>Contoh:</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-8046-b537-ff4e98d2e164" class="code"><code class="language-JavaScript">function Typography(){
+    return (
+        &lt;div&gt;
+            &lt;h1 className=&quot;text-3xl font-bold text-blue-600&quot;&gt;Tailwind Typography&lt;/h1&gt;
+            &lt;p className=&quot;text-gray-600 text-lg mt-2&quot;&gt;Belajar Tailwind sangat menyenangkan dan cepat!&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}</code></pre><p id="1b754857-ba46-80ff-ab40-c870ee64e925" class="">
+</p><hr id="1b754857-ba46-808c-9835-fca55f33f113"/></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">3️⃣ <strong>Border &amp; Radius (Bentuk Elemen)</strong></summary><div class="indented"><p id="1b754857-ba46-80b8-8e41-fdb1d5987620" class=""><strong>🔹 </strong>Menambahkan garis tepi dan membuat sudut membulat.</p><ul id="1b754857-ba46-80c1-8f60-eb6bb58a106b" class="bulleted-list"><li style="list-style-type:disc"><code>border</code> → Garis tepi default</li></ul><ul id="1b754857-ba46-8081-b09d-f7632fa1c642" class="bulleted-list"><li style="list-style-type:disc"><code>border-2</code> → Tebal border 2px</li></ul><ul id="1b754857-ba46-80c8-a785-eb0c2562fc23" class="bulleted-list"><li style="list-style-type:disc"><code>border-red-500</code> → Warna border merah</li></ul><ul id="1b754857-ba46-801d-a061-d903eb973e7f" class="bulleted-list"><li style="list-style-type:disc"><code>rounded-lg</code> → Membuat sudut membulat</li></ul><h3 id="1b754857-ba46-8021-bd08-f39f67174e8d" class=""><strong>Contoh:</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-807c-99a8-f27b6947ecaf" class="code"><code class="language-JavaScript">function BorderRadius(){
+    return (
+        &lt;button className=&quot;border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg&quot;&gt; Klik Saya &lt;/button&gt;
+    )
+}</code></pre><p id="1b754857-ba46-80f2-98e7-d8b504574b29" class="">
+</p><hr id="1b754857-ba46-804e-ab69-ea8a837e6b65"/></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">4️⃣ <strong>Background &amp; Colors</strong></summary><div class="indented"><p id="1b754857-ba46-8090-9932-fe3a21d5e163" class=""><strong>🔹 </strong>Mengatur warna latar belakang dan teks.</p><ul id="1b754857-ba46-8032-abd2-e2999d6ecf7c" class="bulleted-list"><li style="list-style-type:disc"><code>bg-blue-500</code> → Latar belakang biru</li></ul><ul id="1b754857-ba46-8064-999f-fde800d46380" class="bulleted-list"><li style="list-style-type:disc"><code>bg-gradient-to-r from-green-400 to-blue-500</code> → Gradien hijau ke biru</li></ul><ul id="1b754857-ba46-80ad-a2c1-d4dd1d19dc02" class="bulleted-list"><li style="list-style-type:disc"><code>text-white</code> → Teks putih</li></ul><h3 id="1b754857-ba46-8035-b3e8-d22934cc2778" class=""><strong>Contoh:</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-80c3-9067-cadfb22373ef" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function BackgroundColors(){
+    return(
+        &lt;div className=&quot;bg-blue-500 text-white p-6 rounded-lg shadow-lg&quot;&gt;
+            &lt;h3 className=&quot;text-xl font-bold&quot;&gt;Tailwind Colors&lt;/h3&gt;
+            &lt;p className=&quot;mt-2&quot;&gt;Belajar Tailwind itu seru dan fleksibel!&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}</code></pre><p id="1b754857-ba46-80ea-847f-d623c5052f9b" class="">
+</p><hr id="1b754857-ba46-8015-929b-f49443148e62"/></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">5️⃣ <strong>Flexbox &amp; Grid (Layouting)</strong></summary><div class="indented"><p id="1b754857-ba46-8094-b06f-d06aaca961e8" class=""><strong>🔹 </strong>Membantu menyusun tata letak dengan mudah.</p><ul id="1b754857-ba46-803b-9deb-cf1b133617c7" class="bulleted-list"><li style="list-style-type:disc"><code>flex</code> → Mengaktifkan Flexbox</li></ul><ul id="1b754857-ba46-8090-b060-d940000d3650" class="bulleted-list"><li style="list-style-type:disc"><code>justify-between</code> → Menyebarkan elemen ke ujung</li></ul><ul id="1b754857-ba46-804a-b7cf-eef1861fa709" class="bulleted-list"><li style="list-style-type:disc"><code>items-center</code> → Pusatkan elemen secara vertikal</li></ul><ul id="1b754857-ba46-8065-af20-d19db14a3303" class="bulleted-list"><li style="list-style-type:disc"><code>grid grid-cols-3</code> → Membuat layout 3 kolom</li></ul><h3 id="1b754857-ba46-802f-abf5-f5aa1cff326c" class=""><strong>Contoh: </strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-800f-a555-ccf83077cbf3" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function FlexboxGrid(){
+    return (
+        &lt;nav className=&quot;flex justify-between bg-gray-800 p-4 text-white&quot;&gt;
+            &lt;h1 className=&quot;text-lg font-bold&quot;&gt;MyWebsite&lt;/h1&gt;
+            &lt;ul className=&quot;flex space-x-4&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    )
+}</code></pre><p id="1b754857-ba46-8048-b8b0-fd24aee4fbfb" class="">
+</p><hr id="1b754857-ba46-8086-a1b9-e7cee762a7a0"/></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">6️⃣ <strong>Shadow &amp; Effects</strong></summary><div class="indented"><p id="1b754857-ba46-8097-b1e2-f050acbbccdc" class=""><strong>🔹 </strong>Menambahkan bayangan dan efek visual lain.</p><ul id="1b754857-ba46-8079-82f6-d7d140ac02b5" class="bulleted-list"><li style="list-style-type:disc"><code>shadow-md</code> → Bayangan sedang</li></ul><ul id="1b754857-ba46-80c7-a46d-e484e451434a" class="bulleted-list"><li style="list-style-type:disc"><code>shadow-lg</code> → Bayangan besar</li></ul><ul id="1b754857-ba46-80ad-8f51-e62bca36363f" class="bulleted-list"><li style="list-style-type:disc"><code>hover:shadow-xl</code> → Efek bayangan saat hover</li></ul><ul id="1b754857-ba46-806d-9b28-f674c8f1db27" class="bulleted-list"><li style="list-style-type:disc"><code>opacity-50</code> → Transparansi 50%</li></ul><h3 id="1b754857-ba46-8049-a658-c2b2c0201a66" class=""><strong>Contoh: </strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-8016-9b41-f35b3d573afb" class="code"><code class="language-JavaScript">function ShadowEffects(){
+    return (
+        &lt;div className=&quot;bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition&quot;&gt;
+            &lt;h3 className=&quot;text-xl font-semibold&quot;&gt;Hover me!&lt;/h3&gt;
+            &lt;p className=&quot;text-gray-600 mt-2&quot;&gt;Lihat efek bayangan saat hover.&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}</code></pre><p id="1b754857-ba46-8092-8b53-c7636fbde857" class="">
+</p><hr id="1b754857-ba46-80a7-bef0-f438946107f1"/></div></details><p id="1b754857-ba46-8006-acb1-f7c3b3dcdb01" class="">Untuk mendapatkan penjelasan yang lebih lengkap, silahkan akses dokumentasi Tailwind CSS:</p><p id="1b854857-ba46-8034-92e7-dcca5ad774a6" class=""><a href="https://tailwindcss.com/docs/">https://tailwindcss.com/docs/</a><br/><br/></p></div></details><hr id="1b754857-ba46-80f4-b3c2-ead9858f039f"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Reusable Component</summary><div class="indented"><p id="1b554857-ba46-8094-8082-d4c96a1619d7" class="">Reusable Component merupakan suatu komponen yang bisa digunakan berulang kali, sehingga pengembangan bisa lebih efisien dan terstruktur. </p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="1b754857-ba46-80d8-9ce7-fe2c9808fcdf"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1b754857-ba46-806f-9b3f-d4cf58930f20" class="">Umumnya Reusable Component menerapkan konsep<em> Single Responsibility </em>dimana setiap komponen bertanggung jawab untuk suatu tugas khusus agar komponen dapat digunakan kembali pada tempat yang dimana memiliki tugas dan fungsi yang hampir sama.</p></div></figure><div id="1b754857-ba46-8090-ab16-d8c3353c21fc" class="column-list"><div id="1b754857-ba46-8028-bdd2-c73b2183f7c5" style="width:68.75%" class="column"><p id="1b754857-ba46-80e7-b83e-caf1d35775be" class="">Silahkan buat sebuah file baru dengan nama <code>UserForm.jsx</code> lalu masukkan kode berikut</p><ul id="1b754857-ba46-8010-aa2b-fd0a9ab25b92" class="toggle"><li><details open=""><summary><code>UserForm.jsx</code></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-806b-a92f-ce2f912adb2b" class="code"><code class="language-JavaScript">export default function LoginForm() {
+  return (
+    &lt;div className=&quot;flex flex-col items-center justify-center m-5 p-5 bg-gray-100&quot;&gt;
+      &lt;div className=&quot;bg-white p-6 rounded-lg shadow-lg w-96&quot;&gt;
+        &lt;h2 className=&quot;text-2xl font-semibold text-center mb-4&quot;&gt;Tambah User&lt;/h2&gt;
+        &lt;label className=&quot;block text-gray-700 font-medium&quot;&gt;Nama&lt;/label&gt;
+        &lt;input
+          type=&quot;nama&quot;
+          placeholder=&quot;Masukkan Nama&quot;
+          className=&quot;w-full p-2 border border-gray-300 rounded mb-2&quot;
+        /&gt;
+        &lt;label className=&quot;block text-gray-700 font-medium&quot;&gt;Email&lt;/label&gt;
+        &lt;input
+          type=&quot;email&quot;
+          placeholder=&quot;Masukkan Email&quot;
+          className=&quot;w-full p-2 border border-gray-300 rounded mb-2&quot;
+        /&gt;
+        &lt;label className=&quot;block text-gray-700 font-medium&quot;&gt;Tanggal Lahir&lt;/label&gt;
+        &lt;input
+          type=&quot;date&quot;
+          placeholder=&quot;Masukkan Tanggal Lahir&quot;
+          className=&quot;w-full p-2 border border-gray-300 rounded mb-4&quot;
+        /&gt;
+        &lt;button className=&quot;w-full bg-green-500 text-white p-2 rounded&quot;&gt;
+          Simpan
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre></details></li></ul><p id="1b854857-ba46-8084-a0f2-ca3c7bca327f" class="">
+</p></div><div id="1b754857-ba46-80f3-8710-f898f29cb463" style="width:31.250000000000007%" class="column"><figure id="1b854857-ba46-8095-91ef-ef295f730999" class="image"><a href="image%209.png"><img style="width:132px" src="image%209.png"/></a></figure></div></div><p id="1b854857-ba46-80fa-9603-cb99bb6c6ae2" class="">Perhatikan penulisan kode pada form berikut:</p><figure id="1b854857-ba46-8074-a3d1-cd8ec0224b4e" class="image"><a href="image%2010.png"><img style="width:681.9866333007812px" src="image%2010.png"/></a></figure><p id="1b754857-ba46-8010-b6c3-c5e3509720ec" class="">Terlihat bahwa ada pembuatan kode yang berulang pada bagian <code>&lt;label&gt;</code>  dan <code>&lt;input&gt;</code>.  Keduanya hanya berbeda di <em>type</em> dan <em>text </em>saja antara Nama, Email dan Tanggal Lahir. </p><p id="1b854857-ba46-8085-95b3-ebf0580bea93" class="">
+</p><p id="1b854857-ba46-80f2-9476-da54188b92a8" class="">Kita akan coba buat komponen yang reusable, sehingga kode bisa lebih efektif. Buat folder baru <code>components</code>, lalu buat file <code>InputField.jsx</code> dengan isi sebagai berikut:</p><div id="1b854857-ba46-804a-8823-c0a1794ab8d1" class="column-list"><div id="1b854857-ba46-8083-b488-fd6cec7ac8f5" style="width:25%" class="column"><figure id="1b854857-ba46-80ca-80ee-eaa97cc98d1b" class="image"><a href="image%2011.png"><img style="width:158.984375px" src="image%2011.png"/></a></figure></div><div id="1b854857-ba46-80cf-809e-c8af6e9a017a" style="width:75%" class="column"><figure id="1b854857-ba46-80c9-85f8-fe7997a8f7c5" class="image"><a href="image%2012.png"><img style="width:476.98663330078125px" src="image%2012.png"/></a></figure></div></div><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="1b854857-ba46-808c-85a2-e724236f20d6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1b754857-ba46-8050-ad99-d6b6f780f431" class="">Komponen <code>InputField</code> akan menerima 3 props saat di panggil yaitu <em>label, type </em>dan <em>placeholder</em>. Props ini dibutuhkan agar komponen tersebut dapat digunakan di dalam kondisi yang beda-beda. </p></div></figure><p id="1b854857-ba46-802b-8406-c0fc2cccdad2" class="">
+</p><p id="1b754857-ba46-8086-a2ef-c278c8a07dad" class="">Terapkan komponen tersebut untuk inputan yang tersedia. <code>UserForm()</code> akan terlihat lebih sederhana dan mudah untuk di-maintenance:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-80d1-8304-c715cc3d770c" class="code"><code class="language-undefined">export default function LoginForm() {
+  return (
+		...
+        &lt;InputField label=&quot;Nama&quot; type=&quot;text&quot; placeholder=&quot;Silahkan ketik Nama...&quot;/&gt;
+		
+        &lt;InputField label=&quot;Email&quot; type=&quot;email&quot; placeholder=&quot;Silahkan ketik EMail...&quot;/&gt;
+
+        &lt;InputField label=&quot;Tanggal Lahir&quot; type=&quot;date&quot; /&gt;
+		...
+  );
+}
+</code></pre><p id="1b754857-ba46-8067-bcdf-cd8dbafb6317" class="">
+</p></div></details><hr id="1b754857-ba46-80ff-b794-c8c2c3825792"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">React Form dengan State </summary><div class="indented"><p id="1b754857-ba46-8058-99d5-f2d4eb4411bb" class="">Selanjutnya kita akan menangani input dari user melalu sebuah form lalu menyimpan inputan tersebut ke State melalui Event Handling dan menampilkan UI sesuai dengan value State.</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="1b854857-ba46-8060-8017-ef3aaba9e771"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><ul id="1b754857-ba46-806b-972d-c14bd392a4bd" class="bulleted-list"><li style="list-style-type:disc"><em><strong>State </strong></em>merupakan tempat menyimpan dan mengelola data yang bisa berubah data dalam suatu komponen React. </li></ul><ul id="1b854857-ba46-806e-aa87-cabc5e2a35d2" class="bulleted-list"><li style="list-style-type:disc">Jika form diisi oleh user, kita perlu <strong>menyimpan data tersebut ke state</strong>, agar dapat diolah seperti validasi, perhitungan atau mengirim ke API.</li></ul></div></figure><p id="1b754857-ba46-8008-9393-fd9b028bb4d0" class=""><br/>Buat sebuah file baru dengan nama <br/><code>HitungGajiForm.jsx</code> lalu isi dengan kode berikut:</p><div id="1b854857-ba46-8000-9fb7-f8a211addd16" class="column-list"><div id="1b854857-ba46-805b-b31a-eeaaf111c356" style="width:37.5%" class="column"><ul id="1b854857-ba46-8092-b72a-e83ba9251127" class="toggle"><li><details open=""><summary><code>HitungGajiForm.jsx</code></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b754857-ba46-8046-a1a7-d14d33444b0b" class="code"><code class="language-JavaScript">export default function HitungGajiForm() {
+	return (
+		&lt;div className=&quot;flex flex-col items-center justify-center m-5 p-5 bg-gray-100&quot;&gt;
+			&lt;div className=&quot;bg-white p-6 rounded-lg shadow-lg w-96&quot;&gt;
+				&lt;h2 className=&quot;text-2xl font-semibold text-center mb-4 text-gray-700&quot;&gt;Hitung Gaji Bersih&lt;/h2&gt;
+
+				&lt;div className=&quot;mb-4&quot;&gt;
+					&lt;label className=&quot;block text-gray-700 font-medium mb-1&quot;&gt;
+						Gaji Pokok
+					&lt;/label&gt;
+					&lt;input
+						type=&quot;number&quot;
+						placeholder=&quot;Masukkan jumlah gaji&quot;
+						className=&quot;w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500&quot;
+					/&gt;
+				&lt;/div&gt;
+				&lt;div className=&quot;mb-4&quot;&gt;
+					&lt;label className=&quot;block text-gray-700 font-medium mb-1&quot;&gt;
+						Pajak: &lt;b class=&quot;text-red-500&quot;&gt;11%&lt;/b&gt;
+					&lt;/label&gt;
+				&lt;/div&gt;
+
+				&lt;div className=&quot;mt-4 p-3 bg-blue-100 border-l-4 border-blue-500 text-blue-700&quot;&gt;
+					&lt;p className=&quot;font-semibold&quot;&gt;
+						Total Take Home Pay (THP): Rp 0
+					&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	);
+}
+</code></pre></details></li></ul><p id="1b854857-ba46-805a-963b-d9ef73430b15" class="">
+</p></div><div id="1b854857-ba46-8034-b70e-e940f8398f0f" style="width:62.5%" class="column"><figure id="1b854857-ba46-8033-a081-e455e161cb43" class="image"><a href="image%2013.png"><img style="width:384px" src="image%2013.png"/></a></figure></div></div><p id="1b854857-ba46-80e9-ba88-f928bb34cf95" class="">Kita akan menerapkan State untuk melakukan perhitungan THP berdasarkan ketikkan User dan nominal pajak yang ditetapkan. Sesuaikan kode diatas dengan menerapkan perubahan berikut:<br/><br/></p><ol type="1" id="1b854857-ba46-8091-92df-d76f915c7f1e" class="numbered-list" start="1"><li><mark class="highlight-default"><mark class="highlight-default_background">Deklarasikan State </mark></mark><mark class="highlight-red"><mark class="highlight-default_background"><code>gaji</code></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> dan pengolahan perhitungan:</mark></mark><figure id="1b854857-ba46-801f-8a63-efa6333976ee" class="image"><a href="image%2014.png"><img style="width:336px" src="image%2014.png"/></a></figure><ul id="1b854857-ba46-80ed-a39b-efbf406d9f00" class="bulleted-list"><li style="list-style-type:disc"><code>gaji</code> merupakan variabel yang menyimpan nilai  inputan pengguna.</li></ul><ul id="1b854857-ba46-804a-8014-ce10ed18dedb" class="bulleted-list"><li style="list-style-type:disc"><code>setGaji</code> adalah fungsi yang dipanggil  saat event <code>onChange</code> digunakan untuk memperbarui value dari variabel<code>gaji</code>.</li></ul><ul id="1b854857-ba46-80a6-abb8-d95a8eea3509" class="bulleted-list"><li style="list-style-type:disc"><code>useState(&quot;&quot;)</code> berarti nilai awal dari variabel <code>gaji</code>adalah <strong>string kosong (</strong><code><strong>&quot;&quot;</strong></code><strong>)</strong>.</li></ul><ul id="1b854857-ba46-80d3-87b9-ef3b77a0b9df" class="bulleted-list"><li style="list-style-type:disc"><code>pajak</code> dan <code>totalGaji</code> merupakan rule dalam pengolahan data <code>gaji</code></li></ul></li></ol><p id="1b854857-ba46-809e-b27a-f7576ff8bb1b" class="">
+</p><ol type="1" id="1b854857-ba46-8005-9ce7-d9c5c0008b26" class="numbered-list" start="2"><li>Sesuaikan inputan Gaji dengan menerapkan Event Handling <code>onChange</code> :<figure id="1b854857-ba46-80b6-85cc-eadd77e3e3ab" class="image"><a href="image%2015.png"><img style="width:653.950927734375px" src="image%2015.png"/></a></figure><ul id="1b854857-ba46-809f-8416-fda2fdb20e66" class="bulleted-list"><li style="list-style-type:disc">Jenis Event Handling-nya berupa <code>onChange</code> pada inputan gaji, </li></ul><ul id="1b854857-ba46-8035-8144-f4622959d0e6" class="bulleted-list"><li style="list-style-type:disc">Setiap user melakukan input, function <code>setGaji()</code> akan dipanggil dengan menjadikan value ketikkan sebagai parameter-nya  </li></ul><ul id="1b854857-ba46-806d-aa4f-dca8d407253c" class="bulleted-list"><li style="list-style-type:disc"><code>e.target.value</code> ini digunakan mendapatkan value ketikkan user</li></ul><ul id="1b854857-ba46-8009-a183-d5a4c2ef1cb6" class="bulleted-list"><li style="list-style-type:disc">State <code>gaji</code> akan diperbaharui secara otomatis setiap kali user mengetik di inputan tersebut</li></ul><p id="1b854857-ba46-80dc-bd99-f70c5f86f9e9" class="">
+</p></li></ol><ol type="1" id="1b854857-ba46-806e-95e3-dcf57be4d67e" class="numbered-list" start="3"><li>Sesuaikan bagian THP dengan mengambil dari variabel <code>totalGaji</code><figure id="1b854857-ba46-80fc-9274-d707bf8cb81a" class="image"><a href="image%2016.png"><img style="width:654.0164794921875px" src="image%2016.png"/></a></figure><ul id="1b854857-ba46-8020-8512-d12df92cab71" class="bulleted-list"><li style="list-style-type:disc">Pada bagian ini <code>totalGaji</code> ditampilkan dengan menerapkan <code>toLocaleString()</code> agar angka yang tampil lengkap dengan pemisah ribuan</li></ul><p id="1b854857-ba46-8033-ad4f-d47412a64279" class="">
+</p></li></ol><ol type="1" id="1b854857-ba46-8054-a6eb-fc0c87b90594" class="numbered-list" start="4"><li>Proses Re-render ulang UI akan terjadi setiap perubahan State<div id="1b854857-ba46-80a6-bc87-ce69c0626a63" class="column-list"><div id="1b854857-ba46-80aa-ab90-cf682796abce" style="width:43.75%" class="column"><figure id="1b854857-ba46-805b-82a7-e802ab1d6874" class="image"><a href="image%2017.png"><img style="width:288px" src="image%2017.png"/></a></figure></div><div id="1b854857-ba46-8022-aae3-e46ade1b404d" style="width:56.25%" class="column"><p id="1b854857-ba46-803b-be7a-ec67347cd834" class="">Ketika State <code>gaji</code> berubah saat adanya ketikkan oleh User, React akan me re-render ulang komponen <code>HitungGajiForm()</code> sehingga perhitungan <code>totalGaji</code> yang juga ada di function tersebut akan dihitung kembali dan di-update ke UI yang menampilkannya. </p></div></div><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="1b854857-ba46-80a3-bf40-c4ab80239d61"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="1b854857-ba46-8033-ad9d-c774a7bae49e" class="">Perlu diperhatikan bahwa setiap re-render terjadi, React hanya memperbarui bagian yang berubah <em>(dalam hal ini hanya bagian nominal THP)</em> , karena React melakukan perbandingan sebelum dan sesudah perubahan di Virtual DOM sehingga perubahan terasa cepat dan responsif</p><figure id="1b854857-ba46-8055-b417-cba2f82d9fc4" class="image" style="text-align:center"><a href="image%2018.png"><img style="width:384px" src="image%2018.png"/></a></figure></div></figure></li></ol></div></details><hr id="1b754857-ba46-80c1-b820-fac54331ce3c"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Conditional <strong>Rendering</strong></summary><div class="indented"><p id="1b854857-ba46-8009-b139-c21364b216e5" class="">Sebelumnya kita sudah mengetahui bahwa pada komponen <code>HitungGajiForm.jsx</code> memiliki sebuah state <code>gaji</code> yang menyimpan nominal dari gaji yang diinputkan. </p><p id="1b854857-ba46-8016-8d3d-de1a5b9dcd30" class="">Sekarang kita akan coba pasang kondisional sebagai berikut:</p><ul id="1b854857-ba46-80e7-bfad-e661c5ed7073" class="bulleted-list"><li style="list-style-type:disc">Jika <code>gaji</code> belum diinputkan atau bernilai 0, maka tampilkan informasi “Silakan masukkan gaji yang valid (tidak boleh kosong atau negatif)”</li></ul><ul id="1b854857-ba46-80fd-b102-fa7131c6c23f" class="bulleted-list"><li style="list-style-type:disc">Jika <code>gaji</code> berisi nilai yang valid, maka tampilkan informasi hasil perhitungan THP</li></ul><p id="1b854857-ba46-80d5-a3c5-c815a39888fa" class="">
+</p><p id="1b854857-ba46-80e1-aa79-e60c454cc5ef" class="">Lakukan penyesuaian pada <code>div</code> bagian “Total Take Home Pay (THP)” menjadi seperti berikut:</p><figure id="1b854857-ba46-80bc-8c91-f954cdd3a6ff" class="image"><a href="image%2019.png"><img style="width:681.9944458007812px" src="image%2019.png"/></a></figure><div id="1b854857-ba46-80d9-9774-dafddcfdc178" class="column-list"><div id="1b854857-ba46-80b6-ae1b-ebfa7edf4c03" style="width:50%" class="column"><p id="1b854857-ba46-80b0-ad82-e34d99811cdb" class="block-color-gray_background">Saat inputan kosong</p><figure id="1b854857-ba46-80ef-b776-e5eb52d93f7c" class="image"><a href="image%2020.png"><img style="width:317.9779357910156px" src="image%2020.png"/></a></figure></div><div id="1b854857-ba46-808b-abf4-fd3efece1984" style="width:50%" class="column"><p id="1b854857-ba46-80a2-8b8e-dc7a6696420f" class="block-color-blue_background">Saat inputan sesuai dengan kebutuhan</p><figure id="1b854857-ba46-8057-8448-ccbe1536c26b" class="image"><a href="image%2021.png"><img style="width:317.9779357910156px" src="image%2021.png"/></a></figure></div></div><p id="1b854857-ba46-8065-b4cf-e20c98109c72" class="">
+</p><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="1b854857-ba46-80b2-9816-ea0034df9014"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="1b854857-ba46-8072-8e62-ff585b5de325" class="">Conditional Rendering tetap mengharuskan komponen yang dikembalikan terdiri dari satu elemen pembungkus, seperti pada functional component pada umumnya.</p></div></figure><p id="1b854857-ba46-80dd-952c-e6c2404f2652" class="">
+</p></div></details><hr id="1b554857-ba46-80f5-b03d-f4a504311394"/><p id="1b554857-ba46-80fe-9aa5-cb88b9da77e0" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
