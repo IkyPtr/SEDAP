@@ -28,6 +28,7 @@ const Membership =  React.lazy(() => import("./pages/membership"))
 const Pesanan =  React.lazy(() => import("./pages/pesanan"))
 
 
+
 function App() {
   return (
     <Suspense fallback={<Loading />}>
@@ -55,6 +56,7 @@ function App() {
             <User />
           </React.Suspense>
         } />
+        <Route path="/products/:id" element={<ProductDetail />} /> 
         <Route path="/pesanan" element={<Pesanan />} />
       </Route>
       
@@ -76,6 +78,7 @@ function App() {
 
 // Tambahkan import untuk komponen baru
 const User = React.lazy(() => import("./pages/User"));
+import ProductDetail from './pages/ProductDetail';
 
 
 export default App;

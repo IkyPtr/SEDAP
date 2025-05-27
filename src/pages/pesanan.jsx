@@ -1,36 +1,43 @@
 import PageHeader from "../components/PageHeader"
 import { useState, useEffect } from "react"
-import { BsFillExclamationDiamondFill } from "react-icons/bs"; 
-import axios from "axios";
+import { BsFillExclamationDiamondFill } from "react-icons/bs"
+import axios from "axios"
+import { Link } from "react-router-dom"
 
 export default function Pesanan() {
     const [products, setProducts] = useState([])
+    const [query, setQuery] = useState("")
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
     const breadcrumb = ["Dashboard", "Product List"]
-    
+
     useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                setLoading(true)
-                const response = await axios.get("https://dummyjson.com/products")
-                
-                if (response.status !== 200) {
-                    setError(response.data.message);
-                    return; 
+        const timeout = setTimeout(() => {
+            const fetchProducts = async () => {
+                try {
+                    setLoading(true)
+                    const response = await axios.get(`https://dummyjson.com/products/search?q=${query}`)
+
+                    if (response.status !== 200) {
+                        setError(response.data.message)
+                        return
+                    }
+
+                    setProducts(response.data.products)
+                    setError(null)
+                } catch (err) {
+                    setError(err.message || "An unknown error occurred")
+                } finally {
+                    setLoading(false)
                 }
-                setProducts(response.data.products)
-                setError(null)
-            } catch (err) {
-                setError(err.message || "An unknown error occurred");
-            } finally {
-                setLoading(false)
             }
-        }
-        
-        fetchProducts()
-    }, [])
-    
+
+            fetchProducts()
+        }, 900) // ✅ Delay 500ms setelah user berhenti mengetik
+
+        return () => clearTimeout(timeout) // ✅ Bersihkan timeout jika query berubah lebih cepat dari 500ms
+    }, [query])
+
     const errorInfo = error ? (
         <div className="bg-red-200 mb-5 p-5 text-sm font-light text-gray-600 rounded flex items-center">
             <BsFillExclamationDiamondFill className="text-red-600 me-2 text-lg" />
@@ -53,10 +60,18 @@ export default function Pesanan() {
     return (
         <div className="flex-1 p-6 ml-64 mt-16">
             <PageHeader title="Products" breadcrumb={breadcrumb} />
-            
+
             {errorInfo}
-            
+
             <div className="mt-6">
+                <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Cari produk..."
+                    className="mb-4 p-3 w-full bg-white rounded-2xl shadow-lg"
+                />
+
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200 overflow-hidden rounded-2xl shadow-lg">
                         <thead>
@@ -77,7 +92,11 @@ export default function Pesanan() {
                                     <td className="px-6 py-4 font-medium text-gray-700">
                                         {index + 1}.
                                     </td>
-                                    <td className="px-6 py-4">{item.title}</td>
+                                    <td className="px-6 py-4">
+                                        <Link to={`/products/${item.id}`} className="text-emerald-400 hover:text-emerald-500">
+                                            {item.title}
+                                        </Link>
+                                    </td>
                                     <td className="px-6 py-4 capitalize">{item.category}</td>
                                     <td className="px-6 py-4 font-semibold text-emerald-600">
                                         ${item.price}
