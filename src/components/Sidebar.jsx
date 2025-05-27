@@ -1,15 +1,15 @@
 import { MdDashboard, MdPerson, MdShoppingCart, MdInventory } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { MdError } from "react-icons/md";
+import {MdFastfood} from "react-icons/md";
 
 export default function Sidebar() {
   const menuClass = ({ isActive }) =>
     `flex cursor-pointer items-center rounded-lg p-2 space-x-3 text-gray-900
-        ${
-          isActive
-            ? "bg-gray-100 font-medium"
-            : "hover:bg-gray-100"
-        }`;
+        ${isActive
+      ? "bg-gray-100 font-medium"
+      : "hover:bg-gray-100"
+    }`;
   return (
     <aside
       id="logo-sidebar"
@@ -47,14 +47,24 @@ export default function Sidebar() {
               <span>Products</span>
             </NavLink>
           </li>
-          
+          <li>
+            <NavLink
+              id="menu-4"
+              to="/pesanan"
+              className={menuClass}
+            >
+              <MdFastfood className="mr-4 text-xl" />
+              Pesanan
+            </NavLink>
+          </li>
+
           {/* Error Pages Menu - Bisa dikelompokkan dalam dropdown */}
           <li>
             <button type="button" className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
               <MdError className="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" />
               <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Error Pages</span>
               <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
               </svg>
             </button>
             <ul className="py-2 space-y-2">

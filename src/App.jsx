@@ -25,7 +25,7 @@ const Makanan =  React.lazy(() => import("./pages/Products"))
 const Guest =  React.lazy(() => import("./pages/guest"))
 const GuestLayout =  React.lazy(() => import("./layouts/GuestLayout"))
 const Membership =  React.lazy(() => import("./pages/membership"))
-
+const Pesanan =  React.lazy(() => import("./pages/pesanan"))
 
 
 function App() {
@@ -55,6 +55,7 @@ function App() {
             <User />
           </React.Suspense>
         } />
+        <Route path="/pesanan" element={<Pesanan />} />
       </Route>
       
       {/* Aktifkan ErrorPage untuk menangani rute yang tidak ditemukan */}
