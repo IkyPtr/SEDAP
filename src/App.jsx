@@ -26,6 +26,7 @@ const Guest =  React.lazy(() => import("./pages/guest"))
 const GuestLayout =  React.lazy(() => import("./layouts/GuestLayout"))
 const Membership =  React.lazy(() => import("./pages/membership"))
 const Pesanan =  React.lazy(() => import("./pages/pesanan"))
+const Notes =  React.lazy(() => import("./pages/Notes"))
 
 
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/membership" element={<Membership />} />
         <Route path="/products" element={<Makanan />} />
         {/* <Route path="*" element={<ErrorPage />} /> */}
+        <Route path="/notes" element={<Notes />} />
       </Route>
 
       {/* Tambahan kode baru di bawah ini */}
